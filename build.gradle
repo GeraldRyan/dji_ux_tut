@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+alias(libs.plugins.android.application)
+}
+
+apply plugin: 'com.android.application'
+
+android {
+
+
+    defaultConfig {
+    }
+
+
+    packagingOptions{
+        doNotStrip "*/*/libdjivideo.so"
+        doNotStrip "*/*/libSDKRelativeJNI.so"
+        doNotStrip "*/*/libFlyForbid.so"
+        doNotStrip "*/*/libduml_vision_bokeh.so"
+        doNotStrip "*/*/libyuv2.so"
+        doNotStrip "*/*/libGroudStation.so"
+        doNotStrip "*/*/libFRCorkscrew.so"
+        doNotStrip "*/*/libUpgradeVerify.so"
+        doNotStrip "*/*/libFR.so"
+        doNotStrip "*/*/libDJIFlySafeCore.so"
+        doNotStrip "*/*/libdjifs_jni.so"
+        doNotStrip "*/*/libsfjni.so"
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+
+    implementation ('com.dji:dji-uxsdk:4.11')
+    compileOnly ('com.dji:dji-sdk-provided:4.11')
+}
